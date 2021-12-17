@@ -1,12 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { throttle } from 'lodash/function';
+import React, { useEffect, useState } from 'react';
 import { useThrottle } from '../hooks';
-
-function sendFakeSearchRequest(search) {
-  return fetch('https://fake-search-request.com/?search=' + search)
-    .then(() => {})
-    .catch(() => {});
-}
+import { sendFakeSearchRequest } from '../utils';
 
 export default function Throttle() {
   const [search, setSearch] = useState('');
@@ -47,5 +41,3 @@ export default function Throttle() {
     </div>
   );
 }
-
-

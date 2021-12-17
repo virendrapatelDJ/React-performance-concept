@@ -1,12 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { debounce } from 'lodash/function';
+import React, { useEffect, useState } from 'react';
 import { useDebounce } from '../hooks';
-
-function sendFakeSearchRequest(search) {
-  return fetch('https://fake-search-request.com/?search=' + search)
-    .then(() => {})
-    .catch(() => {});
-}
+import { sendFakeSearchRequest } from '../utils';
 
 function WithDebounce() {
   const [search, setSearch] = useState('');
