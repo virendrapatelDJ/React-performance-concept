@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 
+
 export default function UseQueryDemo() {
+  
   const query = useQuery('photos', () => {
     return fetch('https://jsonplaceholder.typicode.com/photos').then(
       (response) => response.json()
@@ -9,7 +11,7 @@ export default function UseQueryDemo() {
   });
 
   const { data } = query || {};
-  console.log(data);
+  // console.log(data);
   return (
     <div>
     {!data?.length && <h1>No Data</h1>}
